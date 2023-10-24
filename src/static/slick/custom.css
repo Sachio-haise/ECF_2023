@@ -1,0 +1,76 @@
+/* Arrows */
+.slick-prev,
+.slick-next {
+    top: 44% !important;
+}
+
+.slick-prev {
+    left: 30px !important;
+    z-index: 1 !important;
+    width: 10px !important;
+    height: 0 !important;
+}
+
+.slick-prev:before {
+    content: url('/assets/images/icons/angle-left.svg') !important;
+    background: rgb(172, 172, 172) !important;
+    border-radius: 2px !important;
+    padding: 10px 12px !important;
+}
+
+[dir='rtl'] .slick-prev:before {
+    content: url('/assets/images/icons/angle-left.svg') !important;
+    background: rgb(172, 172, 172) !important;
+    border-radius: 2px !important;
+    padding: 10px 12px !important;
+}
+
+.slick-next {
+    right: 60px !important;
+    z-index: 1 !important;
+
+    width: 10px !important;
+    height: 0 !important;
+}
+
+.slick-next:before {
+    content: url('/assets/images/icons/angle-right.svg') !important;
+    background: rgb(172, 172, 172) !important;
+    border-radius: 2px !important;
+    padding: 10px 12px !important;
+}
+
+[dir='rtl'] .slick-next:before {
+    content: url('/assets/images/icons/angle-right.svg') !important;
+    background: rgb(172, 172, 172) !important;
+    border-radius: 2px !important;
+    padding: 10px 12px !important;
+}
+
+.slick-dots {
+    bottom: 18px !important;
+}
+
+.slick-dots li {
+    width: 10px !important;
+}
+
+.slick-dots li button:before {
+    font-size: 10px !important;
+    color: #fff !important;
+    opacity: 1 !important;
+}
+
+.slick-dots li.slick-active button:before {
+    opacity: 1 !important;
+    color: #8fc31f !important;
+}
+
+.center .slick-slide {
+    opacity: 0.6 !important;
+    display: flex !important;
+    justify-content: center !important;
+}
+.center .slick-active {
+    opacity: 1 !important;
+}

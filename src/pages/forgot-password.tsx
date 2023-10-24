@@ -16,7 +16,7 @@ const ForgotPassword = () => {
     })
 
     const [email, setEmail] = useState('')
-    const [errors, setErrors] = useState([])
+    const [errors, setErrors] = useState<any>([])
     const [status, setStatus] = useState(null)
 
     const submitForm: FormEventHandler = event => {
@@ -28,9 +28,13 @@ const ForgotPassword = () => {
     return (
         <GuestLayout>
             <Head>
-                <title>Laravel - Forgot your password</title>
+                <title>Forgot your password</title>
             </Head>
             <AuthCard>
+                <p className="text-[24px] font-bold text-center my-4">
+                    Forgot Password
+                </p>
+
                 <div className="mb-4 text-sm text-gray-600 dark:text-gray-400">
                     Forgot your password? No problem. Just let us know your
                     email address and we will email you a password reset link

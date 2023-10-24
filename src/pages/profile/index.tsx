@@ -13,26 +13,26 @@ const Profile = () => {
                 </h2>
             }>
             <Head>
-                <title>Laravel - Profile</title>
+                <title>Profile</title>
             </Head>
 
             <div className="py-12">
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
 
-                    <div className="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
-                        <div className="max-w-xl">
+                    <div className="p-4 sm:p-8 bg-gray-200 shadow-lg rounded-md">
+                        <div className="">
                             <UpdateProfileInformationForm />
                         </div>
                     </div>
 
-                    <div className="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
-                        <div className="max-w-xl">
+                    <div className="p-4 sm:p-8 bg-gray-200 shadow-lg rounded-md ">
+                        <div className="">
                            <UpdatePasswordForm />
                         </div>
                     </div>
 
-                    <div className="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
-                        <div className="max-w-xl">
+                    <div className="p-4 sm:p-8 bg-gray-200 shadow-lg rounded-md ">
+                        <div className="">
                             <DeleteUserForm />
                         </div>
                     </div>

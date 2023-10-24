@@ -15,11 +15,15 @@ class MyDocument extends Document {
                         href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap"
                         rel="stylesheet"
                     />
+
+
                 </Head>
                 <body className="font-sans antialiased">
                     <Main />
                     <NextScript />
                 </body>
+                
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
             </Html>
         )
     }

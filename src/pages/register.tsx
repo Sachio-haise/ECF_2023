@@ -5,9 +5,11 @@ import InputError from '@/components/InputError'
 import Label from '@/components/Label'
 import Link from 'next/link'
 import { useAuth } from '@/hooks/auth'
-import { useState, FormEventHandler } from 'react'
+import { useState, FormEventHandler, useEffect } from 'react'
 import Head from 'next/head'
 import PrimaryButton from '@/components/PrimaryButton'
+import Image from 'next/image'
+import GoogleAuth from '@/components/GoogleAuth'
 
 const Register = () => {
     const { register } = useAuth({
@@ -19,7 +21,9 @@ const Register = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [passwordConfirmation, setPasswordConfirmation] = useState('')
-    const [errors, setErrors] = useState([])
+    const [errors, setErrors] = useState<any>([])
+
+
 
     const submitForm: FormEventHandler = event => {
         event.preventDefault()
@@ -30,16 +34,20 @@ const Register = () => {
             password,
             password_confirmation: passwordConfirmation,
             setErrors,
-            setStatus: () => { }
+            setStatus: () => {},
         })
     }
 
     return (
         <GuestLayout>
             <Head>
-                <title>Laravel - Register</title>
+                <title>Sign Up</title>
             </Head>
             <AuthCard>
+                <p className="text-[24px] font-bold text-center my-4">
+                    Sign Up
+                </p>
+
                 <form onSubmit={submitForm}>
                     {/* Name */}
                     <div>
@@ -88,7 +96,10 @@ const Register = () => {
                             autoComplete="new-password"
                         />
 
-                        <InputError messages={errors.password} className="mt-2" />
+                        <InputError
+                            messages={errors.password}
+                            className="mt-2"
+                        />
                     </div>
 
                     {/* Confirm Password */}
@@ -108,13 +119,26 @@ const Register = () => {
                             required
                         />
 
-                        <InputError messages={errors.password_confirmation} className="mt-2" />
+                        <InputError
+                            messages={errors.password_confirmation}
+                            className="mt-2"
+                        />
                     </div>
+
+                    <div className="flex mt-4 font-bold justify-center items-center space-x-4">
+                        <span className=" w-32 h-[1px] bg-gray-400" />{' '}
+                        <span>OR</span>
+                        <span className=" w-32 h-[1px] bg-gray-400" />
+                    </div>
+
+                    {/* Google Sign Up */}
+
+                 <GoogleAuth  content="Sign Up With Google"/>
 
                     <div className="flex items-center justify-end mt-4">
                         <Link
                             href="/login"
-                            className="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">
+                            className="underline text-sm text-gray-600 dark:text-gray-600 hover:text-gray-900 dark:hover:text-gray-500 rounded-md focus:outline-none  focus:ring-offset-2dark:focus:ring-0 ffset-gray-800">
                             Already registered?
                         </Link>
 

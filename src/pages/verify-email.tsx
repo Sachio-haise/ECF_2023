@@ -16,6 +16,10 @@ const VerifyEmail = () => {
     return (
         <GuestLayout>
             <AuthCard>
+                <p className="text-[24px] font-bold text-center my-4">
+                   Sign Up
+                </p>
+
                 <div className="mb-4 text-sm text-gray-600">
                     Thanks for signing up! Before getting started, could you
                     verify your email address by clicking on the link we just
@@ -24,16 +28,21 @@ const VerifyEmail = () => {
                 </div>
 
                 {status === 'verification-link-sent' && (
-                    <AuthSessionStatus className="mb-4" status='A new verification link has been sent to the email
-                        address you provided during registration' />
+                    <AuthSessionStatus
+                        className="mb-4"
+                        status="A new verification link has been sent to the email
+                        address you provided during registration"
+                    />
                 )}
 
                 <div className="mt-4 flex items-center justify-between">
                     <PrimaryButton
-                        onClick={() => resendEmailVerification({
-                            setStatus,
-                            setErrors: () => { }
-                        })}>
+                        onClick={() =>
+                            resendEmailVerification({
+                                setStatus,
+                                setErrors: () => {},
+                            })
+                        }>
                         Resend Verification Email
                     </PrimaryButton>
 

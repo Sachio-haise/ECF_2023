@@ -27,7 +27,7 @@ export default forwardRef(function Input(
             {...props}
             disabled={disabled}
             className={
-                'border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm ' +
+                'border-darkGreen  border-2 outline-none -500 ring-0 text-gray-700 font-bold focus:ring-0 focus:border-gray-500 rounded-md ' +
                 className
             }
             ref={localRef}

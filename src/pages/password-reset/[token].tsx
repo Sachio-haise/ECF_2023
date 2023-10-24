@@ -15,10 +15,10 @@ const PasswordReset = () => {
 
     const { resetPassword } = useAuth({ middleware: 'guest' })
 
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+    const [email, setEmail] = useState<any>('')
+    const [password, setPassword] = useState<any>('')
     const [passwordConfirmation, setPasswordConfirmation] = useState('')
-    const [errors, setErrors] = useState([])
+    const [errors, setErrors] = useState<any>([])
     const [status, setStatus] = useState(null)
 
     const submitForm: FormEventHandler = event => {

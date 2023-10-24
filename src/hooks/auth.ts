@@ -2,12 +2,14 @@ import useSWR from 'swr'
 import axios, { csrf } from '@/lib/axios'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
+import { Url } from 'next/dist/shared/lib/router/router'
+import { UserProps } from '@/type/type'
 
 declare type AuthMiddleware = 'auth' | 'guest'
 
 interface IUseAuth {
     middleware: AuthMiddleware
-    redirectIfAuthenticated?: string
+    redirectIfAuthenticated?: string | undefined
 }
 
 interface IApiRequest {
@@ -16,23 +18,21 @@ interface IApiRequest {
     [key: string]: any
 }
 
-export interface User {
-    id?: number
-    name?: string
-    email?: string
-    email_verified_at?: string
-    must_verify_email?: boolean // this is custom attribute
-    created_at?: string
-    updated_at?: string
-}
 
 export const useAuth = ({ middleware, redirectIfAuthenticated }: IUseAuth) => {
     const router = useRouter()
 
-    const { data: user, error, mutate } = useSWR<User>('/api/user', () =>
+    const {
+        data: user,
+        error,
+        mutate,
+    } = useSWR<UserProps>('/api/user', () =>
         axios
             .get('/api/user')
-            .then(res => res.data)
+            .then(res => {
+                localStorage.setItem('%to&an', JSON.stringify(res.data.token))
+                return res.data
+            })
             .catch(error => {
                 if (error.response.status !== 409) throw error
 
@@ -133,12 +133,17 @@ export const useAuth = ({ middleware, redirectIfAuthenticated }: IUseAuth) => {
             window.location.pathname === '/verify-email' &&
             user?.email_verified_at
         )
-            router.push(redirectIfAuthenticated)
+            router.push('/dashboard')
+        if (user?.email_verified_at === null) {
+            router.push('/verify-email')
+        }
         if (middleware === 'auth' && error) logout()
     }, [user, error])
+    console.log(user)
 
     return {
         user,
+        mutate,
         register,
         login,
         forgotPassword,
