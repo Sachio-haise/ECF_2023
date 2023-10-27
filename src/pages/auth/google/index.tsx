@@ -20,8 +20,8 @@ function GoogleCallback() {
     // On page load, we take "search" parameters
     // and proxy them to /api/auth/callback on our Laravel API
     useEffect(() => {
-
-        fetch(`http://localhost/api/auth/callback${location.search}`, {
+        const baseURL = process.env.NEXT_PUBLIC_BACKEND_URL
+        fetch(`${baseURL}/api/auth/callback${location.search}`, {
             headers : {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'

@@ -8,9 +8,9 @@ interface ContentProps {
 
 const GoogleAuth = ({content}:ContentProps) => {
     const [loginUrl, setLoginUrl] = useState(null)
-
+    const baseURL = process.env.NEXT_PUBLIC_BACKEND_URL
     useEffect(() => {
-        fetch('http://localhost/api/auth', {
+        fetch(`${baseURL}/api/auth`, {
             headers: {
                 'Content-Type': 'application/json',
                 Accept: 'application/json',

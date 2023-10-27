@@ -29,12 +29,14 @@ const CheckoutForm = ({ carts }: CheckoutFormProps) => {
             return
         }
 
+        const baseURL = process.env.NEXT_PUBLIC_BACKEND_URL
+
         setIsProcessing(true)
         const response = await stripe.confirmPayment({
             elements,
             confirmParams: {
                 // Make sure to change this to your payment completion page
-                return_url: 'http://localhost:3000/order-history',
+                return_url: `${baseURL}/order-history`,
             },
             redirect: 'if_required',
         })
