@@ -29,6 +29,8 @@ const ForgotPassword = () => {
         <GuestLayout>
             <Head>
                 <title>Forgot your password</title>
+                <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
+
             </Head>
             <AuthCard>
                 <p className="text-[24px] font-bold text-center my-4">

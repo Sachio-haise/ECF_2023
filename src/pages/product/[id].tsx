@@ -112,6 +112,8 @@ const ProductDetail = ({ product }: ProductProps) => {
         <GuestLayout>
             <Head>
                 <title>Product</title>
+                <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
+
             </Head>
             {/* Main*/}
             <div className="my-8 container mx-auto grid grid-cols-1 sm:grid-cols-2 gap-10">

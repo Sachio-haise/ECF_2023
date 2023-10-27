@@ -52,6 +52,8 @@ const Login = () => {
         <GuestLayout>
             <Head>
                 <title>Sign In</title>
+                <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
+
             </Head>
             <AuthCard>
                 {/* Session Status */}

@@ -64,6 +64,8 @@ const DeleteUserForm = () => {
                     please download any data or information that you wish to
                     retain.
                 </p>
+                <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
+
             </header>
 
             <DangerButton onClick={confirmUserDeletion}>

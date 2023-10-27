@@ -47,6 +47,8 @@ const index = ({ categories, products }: ProductsProps) => {
         <GuestLayout>
             <Head>
                 <title>Product List</title>
+                <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
+
             </Head>
             <div className="flex ">
                 <div className="hidden sm:block">

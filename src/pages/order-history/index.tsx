@@ -20,6 +20,8 @@ function index() {
             }>
             <Head>
                 <title>Product List</title>
+                <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
+
             </Head>
             <div className="mx-auto my-8 container">
                 <table className="w-full mt-4">
