@@ -10,6 +10,7 @@ class MyDocument extends Document {
         return (
             <Html className="dark">
                 <Head>
+                <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
 					<link rel="preconnect" href="https://fonts.bunny.net"></link>
                     <link
                         href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap"
@@ -22,7 +23,7 @@ class MyDocument extends Document {
                     <Main />
                     <NextScript />
                 </body>
-                
+
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
             </Html>
         )
