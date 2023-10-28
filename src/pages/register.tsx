@@ -42,7 +42,6 @@ const Register = () => {
         <GuestLayout>
             <Head>
                 <title>Sign Up</title>
-                <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
 
             </Head>
             <AuthCard>

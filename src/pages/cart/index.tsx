@@ -86,7 +86,6 @@ const index = () => {
             }>
             <Head>
                 <title>Cart</title>
-                <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
 
             </Head>
             <div className="my-10 mx-auto container">

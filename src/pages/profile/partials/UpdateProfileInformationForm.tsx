@@ -82,7 +82,6 @@ const UpdateProfileInformationForm = () => {
     return (
         <section>
             <header>
-            <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
 
                 <h2 className="text-lg font-bold text-darkGreen">
                     Profile Information
