@@ -10,7 +10,6 @@ class MyDocument extends Document {
         return (
             <Html className="dark">
                 <Head>
-                <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
 					<link rel="preconnect" href="https://fonts.bunny.net"></link>
                     <link
                         href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap"
