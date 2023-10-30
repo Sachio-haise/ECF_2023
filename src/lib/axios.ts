@@ -6,7 +6,7 @@ const axios = Axios.create({
     withCredentials: true,
     headers: {
         'X-Requested-With': 'XMLHttpRequest',
-        'X-XSRF-TOKEN':'XSRF-TOKEN'
+       // 'X-XSRF-TOKEN':'XSRF-TOKEN'
       // 'Access-Control-Allow-Credentials': 'true',
       //  'Access-Control-Allow-Origin':'*',
       //  'Access-Control-Allow-Methods' : 'GET,DELETE,PATCH,POST,PUT',
