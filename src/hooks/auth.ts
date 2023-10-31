@@ -18,7 +18,6 @@ interface IApiRequest {
     [key: string]: any
 }
 
-
 export const useAuth = ({ middleware, redirectIfAuthenticated }: IUseAuth) => {
     const router = useRouter()
 
@@ -64,14 +63,17 @@ export const useAuth = ({ middleware, redirectIfAuthenticated }: IUseAuth) => {
 
         setErrors([])
         setStatus(null)
-
-        axios
-            .post('/login', props)
-            .then(() => mutate())
-            .catch(error => {
-                if (error.response.status !== 422) throw error
-                setErrors(error.response.data.errors)
-            })
+        try {
+            axios
+                .post('/login', props)
+                .then(() => mutate())
+                .catch(error => {
+                    if (error.response.status !== 422) throw error
+                    setErrors(error.response.data.errors)
+                })
+        } catch (err) {
+            console.log(err)
+        }
     }
 
     const forgotPassword = async (args: IApiRequest) => {
